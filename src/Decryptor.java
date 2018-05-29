@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.lang.System.in;
+import static java.lang.System.setOut;
 
 public class Decryptor {
     public static String text = "";
@@ -76,16 +77,46 @@ public class Decryptor {
     private static byte[] m3_cipher_array = new byte[16];
     private static byte[] m4_cipher_array = new byte[16];
 
+    public static String[] key = new String[8];
 
     public static void main(String[] args) {
-        decrypt();
+        key = takeTheInput("Hello sir please enter the key");
+        System.out.println("Enter the cipher :");
+        ;
+        String ciphertext = getInputText();
+        String bulkPlainText = "";
+
+        for (int i = 0; i < ciphertext.length(); i += 8) {
+
+            String singlecipher = ciphertext.substring(i, Math.min(i + 8, ciphertext.length()));
+            String[] singleCipherBin = convertToBinaryStringArray(singlecipher);
+            bulkPlainText += decrypt(key, singleCipherBin);
+        }
+
+        System.out.println("BULK TExt :" + bulkPlainText);
+
+
+        // decrypt(key,singleCipher);
     }
 
-    private static void decrypt() {
+    private static String[] convertToBinaryStringArray(String text) {
+        char[] charArray = {0, 0, 0, 0, 0, 0, 0, 0};
+        int i = 0;
+        while (i < 8) {
+            if (i < text.length()) {
+                charArray[i] = text.charAt(i);
+            }
+            i++;
+        }
+
+        String paddedinput = new String(charArray);
+        return toBinary(paddedinput, 8).split(" ");
+    }
+
+
+    private static String decrypt(String[] key, String[] ciphertext_array) {
         long stDecTm = System.currentTimeMillis();
 
-        String[] ciphertext_array = takeTheInput("Hello sir plese enter the cipher");
-        String[] key = takeTheInput("Hello sir plese enter the key");
 
         String[] result1 = Arrays.copyOfRange(ciphertext_array, 0, 4);
         String[] result2 = Arrays.copyOfRange(ciphertext_array, 4, 8);
@@ -646,8 +677,11 @@ public class Decryptor {
 
         System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
         System.out.println("Cipher:" + compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher));
-        System.out.println("Plaintext:" + compositearraytoString(m1_double_prime, m2_double_prime, m3_double_prime, m4_double_prime));
+
+        String plainText = compositearraytoString(m1_double_prime, m2_double_prime, m3_double_prime, m4_double_prime);
+        System.out.println("Plaintext:" + plainText);
         System.out.println("decryption time in ms : " + decryptTime);
+        return plainText;
 
 
     }
@@ -843,7 +877,7 @@ public class Decryptor {
 
     private static String[] takeTheInput(String a) {
 
-        String inp=a;
+        String inp = a;
         System.out.println(inp);
         Scanner scanner = new Scanner(in);
 
@@ -947,6 +981,18 @@ public class Decryptor {
         }
 
         return result;
+    }
+
+    private static String getInputText() {
+        System.out.println("Please enter the text :");
+        Scanner scanner = new Scanner(in);
+
+        text = scanner.next();
+
+//        String[] input = {"01010100", "01000101", "01010011", "01010100", "01001000", "01000111", "01000101", "01000001"};
+
+        return text;
+
     }
 
 

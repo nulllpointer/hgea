@@ -131,12 +131,85 @@ public class Encryptor {
 
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        encrypt ();
+
+        //generate key
+
+
+        {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
+
+                    char x = gen.nextString().charAt(j);
+                    String y = String.valueOf(x);
+                    k1[i][j] = (byte) Integer.parseInt(y);
+                }
+            }
+
+
+            display4by4("K1", k1);
+        }
+
+
+        {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
+                    char x = gen.nextString().charAt(j);
+                    String y = String.valueOf(x);
+                    k2[i][j] = (byte) Integer.parseInt(y);
+                }
+            }
+
+            display4by4("K2", k2);
+        }
+
+
+        {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
+                    char x = gen.nextString().charAt(j);
+                    String y = String.valueOf(x);
+                    k3[i][j] = (byte) Integer.parseInt(y);
+                }
+            }
+
+            display4by4("K3", k3);
+        }
+
+
+        {
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
+                    char x = gen.nextString().charAt(j);
+                    String y = String.valueOf(x);
+                    k4[i][j] = (byte) Integer.parseInt(y);
+                }
+            }
+
+            display4by4("K4", k4);
+        }
+
+
+        String plainText = getInputText();
+        String bulkText = "";
+
+        for (int i = 0; i < plainText.length(); i += 8) {
+
+            String singlePlainText = plainText.substring(i, Math.min(i + 8, plainText.length()));
+            String[] singleplainTextBin = convertToBinaryStringArray(singlePlainText);
+            bulkText += encrypt(singleplainTextBin);
+        }
+
+        System.out.println("BULK TExt :" +bulkText);
+
 
     }
 
-    private static void encrypt () {
-        String[] plaintextbin = takeTheInput();
+    private static String encrypt(String[] plaintextbin) {
+
         startTime = System.currentTimeMillis();
         //convert plaintext to 4*4
         String[] result1 = Arrays.copyOfRange(plaintextbin, 0, 4);
@@ -203,67 +276,6 @@ public class Encryptor {
             display4by4("M2", m2);
             display4by4("M3", m3);
             display4by4("M4", m4);
-
-
-            //generate key
-
-
-            {
-                for (int i = 0; i < 4; i++) {
-                    for (int j = 0; j < 4; j++) {
-                        RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
-
-                        char x = gen.nextString().charAt(j);
-                        String y = String.valueOf(x);
-                        k1[i][j] = (byte) Integer.parseInt(y);
-                    }
-                }
-
-
-                display4by4("K1", k1);
-            }
-
-
-            {
-                for (int i = 0; i < 4; i++) {
-                    for (int j = 0; j < 4; j++) {
-                        RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
-                        char x = gen.nextString().charAt(j);
-                        String y = String.valueOf(x);
-                        k2[i][j] = (byte) Integer.parseInt(y);
-                    }
-                }
-
-                display4by4("K2", k2);
-            }
-
-
-            {
-                for (int i = 0; i < 4; i++) {
-                    for (int j = 0; j < 4; j++) {
-                        RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
-                        char x = gen.nextString().charAt(j);
-                        String y = String.valueOf(x);
-                        k3[i][j] = (byte) Integer.parseInt(y);
-                    }
-                }
-
-                display4by4("K3", k3);
-            }
-
-
-            {
-                for (int i = 0; i < 4; i++) {
-                    for (int j = 0; j < 4; j++) {
-                        RandomString gen = new RandomString(4, ThreadLocalRandom.current(), "10");
-                        char x = gen.nextString().charAt(j);
-                        String y = String.valueOf(x);
-                        k4[i][j] = (byte) Integer.parseInt(y);
-                    }
-                }
-
-                display4by4("K4", k4);
-            }
 
 
             //Calculating k prime
@@ -359,8 +371,6 @@ public class Encryptor {
             System.arraycopy(k4_array, 12, k4_prime_array, 13, 1);
             System.arraycopy(k4_array, 10, k4_prime_array, 14, 1);
             System.arraycopy(k4_array, 2, k4_prime_array, 15, 1);
-
-
 
 
             k1_prime = monoToBidi(k1_prime_array);
@@ -720,12 +730,14 @@ public class Encryptor {
             encryptTime = (endTime - startTime);
 
             System.out.println("Making composite cipher for M1,M2,M3,M4");
-            System.out.println("Cipher in string:" + compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher));
+            String cipheredText = compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher);
+
+            System.out.println("Cipher in string:" + cipheredText);
             System.out.println("Key in string:" + compositearraytoString(k1, k2, k4, k3));
 
             System.out.println("Encryption Time in ms:" + encryptTime);
 
-
+            return cipheredText;
         }
 
 
@@ -874,7 +886,7 @@ public class Encryptor {
         return array;
     }
 
-    private static String toBinary(String plaintextbin, int bits) {
+      static String toBinary(String plaintextbin, int bits) {
         String result = "";
         String tmpStr;
         int tmpInt;
@@ -909,6 +921,15 @@ public class Encryptor {
         Scanner scanner = new Scanner(in);
 
         text = scanner.next();
+        String[] input = convertToBinaryStringArray(text);
+
+//        String[] input = {"01010100", "01000101", "01010011", "01010100", "01001000", "01000111", "01000101", "01000001"};
+
+        return input;
+
+    }
+
+     static String[] convertToBinaryStringArray(String text  ) {
         char[] charArray = {0, 0, 0, 0, 0, 0, 0, 0};
         int i = 0;
         while (i < 8) {
@@ -919,11 +940,21 @@ public class Encryptor {
         }
 
         String paddedinput = new String(charArray);
-        String[] input = toBinary(paddedinput, 8).split(" ");
+        return toBinary(paddedinput, 8).split(" ");
+
+
+
+    }
+
+    private static String getInputText() {
+        System.out.println("Please enter the text :");
+        Scanner scanner = new Scanner(in);
+
+        text = scanner.next();
 
 //        String[] input = {"01010100", "01000101", "01010011", "01010100", "01001000", "01000111", "01000101", "01000001"};
 
-        return input;
+        return text;
 
     }
 
