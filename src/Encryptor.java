@@ -129,15 +129,19 @@ public class Encryptor {
     public static long endTime;
     public static long encryptTime;
     public static String plainText = "";
-    static File file = new File("hgeatext");
+    static File inputfile = new File("inputfile");
+    static File outputfile = new File("outputfile");
+
 
     public static String key;
-    public static  String bulkText;
+    public static String bulkText;
 
 
     public static void main(String[] args) throws IOException {
-        processFile(file);
-        System.out.println("Enterred text:"+plainText);
+        processinputFile(inputfile);
+
+
+        //     System.out.println("Enterred text:"+plainText);
 
 
         //generate key
@@ -208,16 +212,18 @@ public class Encryptor {
             bulkText += encrypt(singleplainTextBin);
         }
 
+        processoutFile(outputfile);
+
         endTime = System.currentTimeMillis();
         encryptTime = (endTime - startTime);
 
 
         System.out.println("Encryption time(ms):" + encryptTime);
-        System.out.println("Cipher:" + bulkText);
-        key=compositearraytoString(k1, k2, k4, k3);
+        //   System.out.println("Cipher:" + bulkText);
+        key = compositearraytoString(k1, k2, k4, k3);
         System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
 
-        double bytes = file.length();
+        double bytes = inputfile.length();
         System.out.println("File Size(kilobytes):" + bytes / 1024);
 
         Decryptor.main(new String[]{"go"});
@@ -652,7 +658,7 @@ public class Encryptor {
             System.out.println("Key in string:" + compositearraytoString(k1, k2, k4, k3));
 
          //   System.out.println("Encryption Time in ms:" + encryptTime);
-            double bytes = file.length();
+            double bytes = inputfile.length();
             System.out.println("Size(kilobytes):" + bytes / 1024);
 */
             return cipheredText;
@@ -994,7 +1000,7 @@ public class Encryptor {
     }
 */
 
-    public static void processFile(File file) throws IOException {
+    public static void processinputFile(File file) throws IOException {
         try (InputStream in = new FileInputStream(file);
              Reader reader = new InputStreamReader(in)) {
             int c;
@@ -1010,8 +1016,15 @@ public class Encryptor {
     }
 
 
-}
+    public static void processoutFile(File outputfile) throws IOException {
 
+
+        try (PrintWriter out = new PrintWriter("outputfile")) {
+            out.println(bulkText);
+        }
+
+    }
+}
 
 
 

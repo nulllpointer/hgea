@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb327dad-ec1b-483f-a97e-b8f6a5707931" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hgeatext" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/inputfile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputfile" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/hgeatext" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hgea/Decryptor.class" afterPath="$PROJECT_DIR$/out/production/hgea/Decryptor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hgea/Encryptor.class" afterPath="$PROJECT_DIR$/out/production/hgea/Encryptor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Decryptor.java" afterPath="$PROJECT_DIR$/src/Decryptor.java" />
@@ -28,17 +31,19 @@
       <file leaf-file-name="Decryptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#decrypt#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#takeTheInput#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
                 <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
@@ -49,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hgeatext" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hgeatext">
+      <file leaf-file-name="inputfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/inputfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="3177" lean-forward="false" selection-start-line="8" selection-start-column="3177" selection-end-line="8" selection-end-column="3177" />
+            <state relative-caret-position="0">
+              <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -62,11 +67,21 @@
       <file leaf-file-name="Encryptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="219" column="37" lean-forward="true" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
+            <state relative-caret-position="318">
+              <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="outputfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/outputfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,7 +168,12 @@
       <find>System</find>
       <find>time</find>
       <find>System.out</find>
+      <find>file</find>
+      <find>hgeatext</find>
     </findStrings>
+    <replaceStrings>
+      <replace>inputfile</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -168,9 +188,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/RandomString.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/Encryptor.java" />
         <option value="$PROJECT_DIR$/src/Decryptor.java" />
         <option value="$PROJECT_DIR$/hgeatext" />
+        <option value="$PROJECT_DIR$/inputfile" />
+        <option value="$PROJECT_DIR$/src/Encryptor.java" />
+        <option value="$PROJECT_DIR$/outputfile" />
       </list>
     </option>
   </component>
@@ -249,7 +271,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/javafx-0.2.jar.zip!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../des/DES-Java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
@@ -263,6 +285,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -783,12 +806,12 @@
       <updated>1527534513496</updated>
       <workItem from="1527534517718" duration="12179000" />
       <workItem from="1527930290716" duration="858000" />
-      <workItem from="1527931670635" duration="5765000" />
+      <workItem from="1527931670635" duration="11143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18802000" />
+    <option name="totallyTimeSpent" value="24180000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,7 +824,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="52" width="1858" height="1028" extended-state="4" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -820,12 +843,13 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3967742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3967742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25551876" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25551876" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -833,7 +857,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,37 +874,25 @@
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
-          <line>216</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
-          <line>219</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
-          <line>214</line>
+          <line>213</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
+          <line>211</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
+          <line>214</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -897,12 +908,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#decrypt#0;class#Decryptor#0" expanded="false" />
             <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#takeTheInput#0;class#Decryptor#0" expanded="false" />
             <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
             <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
             <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
@@ -992,12 +1005,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#decrypt#0;class#Decryptor#0" expanded="false" />
             <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#takeTheInput#0;class#Decryptor#0" expanded="false" />
             <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
             <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
             <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
@@ -1101,16 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="219" column="37" lean-forward="true" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="701">
@@ -1121,17 +1126,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#decrypt#0;class#Decryptor#0" expanded="false" />
             <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
             <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#takeTheInput#0;class#Decryptor#0" expanded="false" />
             <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
             <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
             <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
@@ -1141,10 +1148,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hgeatext">
+    <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/io/FileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="3177" lean-forward="false" selection-start-line="8" selection-start-column="3177" selection-end-line="8" selection-end-column="3177" />
+        <state relative-caret-position="177">
+          <caret line="88" column="11" lean-forward="false" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inputfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -99,7 +99,7 @@ public class Decryptor {
             bulkPlainText += decrypt(key, singleCipherBin);
         }
 
-        System.out.println("PlainText:" + bulkPlainText);
+      //  System.out.println("PlainText:" + bulkPlainText);
         long endDecTime = System.currentTimeMillis();
         decryptTime = (endDecTime - stDecTm);
         System.out.println("Decryption time(ms): " + decryptTime);
@@ -131,7 +131,6 @@ public class Decryptor {
 
         String[] result3 = Arrays.copyOfRange(key, 0, 4);
         String[] result4 = Arrays.copyOfRange(key, 4, 8);
-
 
         //Cipher in quadrant form
         for (int i = 0; i < 4; i++) {
