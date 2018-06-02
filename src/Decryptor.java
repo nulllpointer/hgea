@@ -225,15 +225,7 @@ public class Decryptor {
         }
 
 
-        display4by4("m1_cipher", m1_cipher);
-        display4by4("m2_cipher", m2_cipher);
-        display4by4("m3_cipher", m3_cipher);
-        display4by4("m4_cipher", m4_cipher);
 
-        display4by4("K1", k1);
-        display4by4("K2", k2);
-        display4by4("K3", k3);
-        display4by4("K4", k4);
 
 
         m1_cipher_array = bidiToMono(m1_cipher);
@@ -340,14 +332,10 @@ public class Decryptor {
         k3_prime = monoToBidi(k3_prime_array);
         k4_prime = monoToBidi(k4_prime_array);
 
-        display4by4("K1'", k1_prime);
-        display4by4("K2'", k2_prime);
-        display4by4("K3'", k3_prime);
-        display4by4("K4'", k4_prime);
+
 
 
         //Plotting standard XY axis graph values
-        System.out.println("Replotting m_cipher from XY graph");
         System.arraycopy(m1_cipher_array, 15, m1_array, 0, 1);
         System.arraycopy(m1_cipher_array, 14, m1_array, 1, 1);
         System.arraycopy(m1_cipher_array, 13, m1_array, 2, 1);
@@ -442,15 +430,9 @@ public class Decryptor {
         m4 = monoToBidi(m4_array);
 
 
-        System.out.println("after replotting we get m1,m2,m3,m4");
-
-        display4by4("M1", m1);
-        display4by4("M2", m2);
-        display4by4("M3", m3);
-        display4by4("M4", m4);
 
 
-        System.out.println("Now quadrant selection for M1");
+
         //Counting 1's in K1
         int count = 0;
         for (int i = 0; i < k1_array.length; i++) {
@@ -460,9 +442,6 @@ public class Decryptor {
 
         }
         int remainder = count % 4;
-        System.out.println("No of 1's:" + count);
-        System.out.println("Remainder is:" + remainder);
-        System.out.println("So value is generated from " + remainder + "quadrant");
 
         if (remainder == 0) {
             m1_prime = m1;
@@ -490,7 +469,6 @@ public class Decryptor {
         }
 
 
-        System.out.println("Now quadrant selection for M2");
         int count2 = 0;
         for (int i = 0; i < k2_array.length; i++) {
             if (k2_array[i] == 1) {
@@ -499,8 +477,6 @@ public class Decryptor {
 
         }
         int remainder2 = count2 % 4;
-        System.out.println("No of 1's:" + count2);
-        System.out.println("Remainder is:" + remainder2);
 
         if (remainder2 == 0) {
             m2_prime = m2;
@@ -528,7 +504,6 @@ public class Decryptor {
         }
 
 
-        System.out.println("Now selecting M2 PRIME");
 
         int count3 = 0;
         for (int i = 0; i < k3_array.length; i++) {
@@ -539,8 +514,6 @@ public class Decryptor {
         }
         int remainder3 = count3 % 4;
 
-        System.out.println("No of 1's:" + count3);
-        System.out.println("Remainder is:" + remainder3);
 
         if (remainder3 == 0) {
             m3_prime = m3;
@@ -577,8 +550,6 @@ public class Decryptor {
 
         }
         int remainder4 = count4 % 4;
-        System.out.println("No of 1's:" + count4);
-        System.out.println("Remainder is:" + remainder4);
 
         if (remainder4 == 0) {
             m4_prime = m4;
@@ -606,19 +577,6 @@ public class Decryptor {
         }
 
 
-        display4by4("M1'", m1_prime);
-        display4by4("M2'", m2_prime);
-        display4by4("M3'", m3_prime);
-        display4by4("M4'", m4_prime);
-
-
-        System.out.println("M1 double prime calculated after shifting and xoring m_prime and K");
-
-
-        display4by4("M1''", m1_double_prime);
-        display4by4("M2''", m2_double_prime);
-        display4by4("M3''", m3_double_prime);
-        display4by4("M4''", m4_double_prime);
 
 
         tmp1 = m3_double_prime;
@@ -822,7 +780,6 @@ public class Decryptor {
 
         }
         String encodedString = new String(hero).toString();
-//        System.out.println("key_array :  " + encodedString);
 
 
         return encodedString;
@@ -878,7 +835,6 @@ public class Decryptor {
     private static String[] takeTheInput(String a) {
 
         String inp = a;
-        System.out.println(inp);
         Scanner scanner = new Scanner(in);
 
         text = scanner.next();
@@ -900,7 +856,7 @@ public class Decryptor {
 
     }
 
-    private static void display4by4(String name, byte[][] value) {
+   /* private static void display4by4(String name, byte[][] value) {
 
         System.out.println("\t" + "Matrix :  " + name + "=");
         System.out.println();
@@ -918,7 +874,7 @@ public class Decryptor {
         System.out.println();
 
     }
-
+*/
     private static byte[] bidiToMono(final byte[][] array) {
         int rows = array.length, cols = array[0].length;
         byte[] mono = new byte[(rows * cols)];

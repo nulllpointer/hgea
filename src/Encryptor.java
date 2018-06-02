@@ -147,7 +147,6 @@ public class Encryptor {
             }
 
 
-            display4by4("K1", k1);
         }
 
 
@@ -161,7 +160,6 @@ public class Encryptor {
                 }
             }
 
-            display4by4("K2", k2);
         }
 
 
@@ -175,7 +173,6 @@ public class Encryptor {
                 }
             }
 
-            display4by4("K3", k3);
         }
 
 
@@ -189,7 +186,6 @@ public class Encryptor {
                 }
             }
 
-            display4by4("K4", k4);
         }
 
 
@@ -272,10 +268,6 @@ public class Encryptor {
 
             }
 
-            display4by4("M1", m1);
-            display4by4("M2", m2);
-            display4by4("M3", m3);
-            display4by4("M4", m4);
 
 
             //Calculating k prime
@@ -379,12 +371,6 @@ public class Encryptor {
             k4_prime = monoToBidi(k4_prime_array);
 
 
-            System.out.println("K' representing random transformation of K");
-            display4by4("K1'", k1_prime);
-            display4by4("K2'", k2_prime);
-
-            display4by4("K3'", k3_prime);
-            display4by4("K4'", k4_prime);
 
 
             //m1_xor_k1,k2,k3,k4
@@ -408,27 +394,6 @@ public class Encryptor {
             Encryptor.xor(m4, k3, m4_xor_k3);
             Encryptor.xor(m4, k4, m4_xor_k4);
 
-            display4by4("M1 XOR K1", m1_xor_k1);
-            display4by4("M1 XOR K2'", m1_xor_k2);
-            display4by4("M1 XOR K3'", m1_xor_k3);
-            display4by4("M1 XOR K4", m1_xor_k4);
-
-
-            display4by4("M2 XOR K1", m2_xor_k1);
-            display4by4("M2 XOR K2'", m2_xor_k2);
-            display4by4("M2 XOR K3'", m2_xor_k3);
-            display4by4("M2 XOR K4", m2_xor_k4);
-
-            display4by4("M3 XOR K1", m3_xor_k1);
-            display4by4("M3 XOR K2'", m3_xor_k2);
-            display4by4("M3 XOR K3'", m3_xor_k3);
-            display4by4("M3 XOR K4", m3_xor_k4);
-
-
-            display4by4("M4 XOR K1", m4_xor_k1);
-            display4by4("M4 XOR K2'", m4_xor_k2);
-            display4by4("M4 XOR K3'", m4_xor_k3);
-            display4by4("M4 XOR K4", m4_xor_k4);
 
 
             firstquadshiftcopy(bidiToMono(m1_xor_k1), m1_prime_candidate1_array);
@@ -471,31 +436,6 @@ public class Encryptor {
             m4_prime_candidate3 = monoToBidi(m4_prime_candidate3_array);
             m4_prime_candidate4 = monoToBidi(m4_prime_candidate4_array);
 
-            System.out.println("Shifting the bits after performing XOR operation");
-
-
-            display4by4("M1-1*", m1_prime_candidate1);
-            display4by4("M1-2*", m1_prime_candidate2);
-            display4by4("M1-3*", m1_prime_candidate3);
-            display4by4("M1-4*", m1_prime_candidate4);
-
-            display4by4("M2-1*", m2_prime_candidate1);
-            display4by4("M2-2*", m2_prime_candidate2);
-            display4by4("M2-3*", m2_prime_candidate3);
-            display4by4("M2-4*", m2_prime_candidate4);
-
-            display4by4("M3-1*", m3_prime_candidate1);
-            display4by4("M3-2*", m3_prime_candidate2);
-            display4by4("M3-3*", m3_prime_candidate3);
-            display4by4("M3-4*", m3_prime_candidate4);
-
-            display4by4("M4-1*", m4_prime_candidate1);
-            display4by4("M4-2*", m4_prime_candidate2);
-            display4by4("M4-3*", m4_prime_candidate3);
-            display4by4("M4-4*", m4_prime_candidate4);
-
-
-            System.out.println("Now selecting M1 PRIME");
             //Counting 1's in K1
             int count = 0;
             for (int i = 0; i < k1_array.length; i++) {
@@ -518,10 +458,6 @@ public class Encryptor {
                 m1_prime = m1_prime_candidate4;
             }
 
-            System.out.println("Checked 1's and selected M1 prime is ");
-            display4by4("M1'", m1_prime);
-
-            System.out.println("Now selecting M2 PRIME");
             int count2 = 0;
             for (int i = 0; i < k2_array.length; i++) {
                 if (k2_array[i] == 1) {
@@ -530,8 +466,6 @@ public class Encryptor {
 
             }
             int remainder2 = count2 % 4;
-            System.out.println("No of 1's:" + count2);
-            System.out.println("Remainder is:" + remainder2);
 
             if (remainder2 == 0) {
                 m2_prime = m2_prime_candidate1;
@@ -543,11 +477,6 @@ public class Encryptor {
                 m2_prime = m2_prime_candidate4;
             }
 
-            System.out.println("Checked 1's and selected M2 prime is ");
-
-            display4by4("M2'", m2_prime);
-
-            System.out.println("Now selecting M2 PRIME");
 
             int count3 = 0;
             for (int i = 0; i < k3_array.length; i++) {
@@ -557,8 +486,6 @@ public class Encryptor {
 
             }
             int remainder3 = count3 % 4;
-            System.out.println("No of 1's:" + count3);
-            System.out.println("Remainder is:" + remainder3);
 
             if (remainder3 == 0) {
                 m3_prime = m3_prime_candidate1;
@@ -570,8 +497,6 @@ public class Encryptor {
                 m3_prime = m3_prime_candidate4;
             }
 
-            System.out.println("Checked 1's and selected M3 prime is ");
-            display4by4("M3'", m3_prime);
 
 
             int count4 = 0;
@@ -582,8 +507,6 @@ public class Encryptor {
 
             }
             int remainder4 = count4 % 4;
-            System.out.println("No of 1's:" + count4);
-            System.out.println("Remainder is:" + remainder4);
 
             if (remainder4 == 0) {
                 m4_prime = m4_prime_candidate1;
@@ -596,28 +519,20 @@ public class Encryptor {
             }
 
 
-            System.out.println("Checked 1's and selected M4 prime is ");
 
 
-            display4by4("M4'", m4_prime);
 
             //M1 double prime calculated after xoring m1_prime and K1_prime
 
-            System.out.println("XOR with Ki'");
             xor(m1_prime, k1_prime, m1_double_prime);
-            display4by4("M1''", m1_double_prime);
 
             xor(m2_prime, k2_prime, m2_double_prime);
-            display4by4("M2'", m2_double_prime);
 
             xor(m3_prime, k3_prime, m3_double_prime);
-            display4by4("M3''", m3_double_prime);
 
 
             xor(m4_prime, k4_prime, m4_double_prime);
-            display4by4("M4''", m4_double_prime);
 
-            System.out.println("Plotting to standard XY axis");
             m1_double_prime_array = Encryptor.bidiToMono(m1_double_prime);
 
             System.arraycopy(m1_double_prime_array, 15, m1_cipher_array, 0, 1);
@@ -720,11 +635,6 @@ public class Encryptor {
 
             m4_cipher = Encryptor.monoToBidi(m4_cipher_array);
 
-
-            display4by4("M1_ci ", m1_cipher);
-            display4by4("M2_ci ", m2_cipher);
-            display4by4("M3_ci ", m3_cipher);
-            display4by4("M4_ci ", m4_cipher);
 
             endTime = System.currentTimeMillis();
             encryptTime = (endTime - startTime);
@@ -1057,7 +967,7 @@ public class Encryptor {
     }
 
 
-    private static void display4by4(String name, byte[][] value) {
+   /* private static void display4by4(String name, byte[][] value) {
 
         System.out.println("\t" + "Matrix :  " + name + "=");
         System.out.println();
@@ -1075,7 +985,7 @@ public class Encryptor {
         System.out.println();
 
     }
-
+*/
 
 }
 
