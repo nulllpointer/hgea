@@ -86,6 +86,10 @@ public class Decryptor {
         String ciphertext = getInputText();
         String bulkPlainText = "";
 
+
+        long stDecTm = System.currentTimeMillis();
+
+
         for (int i = 0; i < ciphertext.length(); i += 8) {
 
             String singlecipher = ciphertext.substring(i, Math.min(i + 8, ciphertext.length()));
@@ -94,6 +98,11 @@ public class Decryptor {
         }
 
         System.out.println("BULK TExt :" + bulkPlainText);
+
+        long endDecTime = System.currentTimeMillis();
+        decryptTime = (endDecTime - stDecTm);
+        System.out.println("decryption time in ms : " + decryptTime);
+
 
 
         // decrypt(key,singleCipher);
@@ -115,7 +124,6 @@ public class Decryptor {
 
 
     private static String decrypt(String[] key, String[] ciphertext_array) {
-        long stDecTm = System.currentTimeMillis();
 
 
         String[] result1 = Arrays.copyOfRange(ciphertext_array, 0, 4);
@@ -670,17 +678,12 @@ public class Decryptor {
 
         );
 
-        long endDecTime = System.currentTimeMillis();
-
-
-        decryptTime = (endDecTime - stDecTm);
 
         System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
         System.out.println("Cipher:" + compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher));
 
         String plainText = compositearraytoString(m1_double_prime, m2_double_prime, m3_double_prime, m4_double_prime);
         System.out.println("Plaintext:" + plainText);
-        System.out.println("decryption time in ms : " + decryptTime);
         return plainText;
 
 

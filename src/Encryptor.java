@@ -1,4 +1,4 @@
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -129,8 +129,20 @@ public class Encryptor {
     public static long endTime;
     public static long encryptTime;
 
+    public static String plainText = "";
+    static File file=new File("hgeatext");
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+
+    public static void main(String[] args) throws IOException {
+
+//        File file = new File("hgeatext");
+
+
+
+        processFile(file);
+
+        System.out.println(plainText);
+
 
         //generate key
 
@@ -192,9 +204,11 @@ public class Encryptor {
             display4by4("K4", k4);
         }
 
+        //   plainText = getInputText();
 
-        String plainText = getInputText();
         String bulkText = "";
+        startTime = System.currentTimeMillis();
+
 
         for (int i = 0; i < plainText.length(); i += 8) {
 
@@ -203,14 +217,18 @@ public class Encryptor {
             bulkText += encrypt(singleplainTextBin);
         }
 
-        System.out.println("BULK TExt :" +bulkText);
+        endTime = System.currentTimeMillis();
+        encryptTime = (endTime - startTime);
+
+
+        System.out.println("Encrypting time :"+encryptTime);
+        System.out.println("BULK TExt :" + bulkText);
 
 
     }
 
     private static String encrypt(String[] plaintextbin) {
 
-        startTime = System.currentTimeMillis();
         //convert plaintext to 4*4
         String[] result1 = Arrays.copyOfRange(plaintextbin, 0, 4);
         String[] result2 = Arrays.copyOfRange(plaintextbin, 4, 8);
@@ -726,8 +744,6 @@ public class Encryptor {
             display4by4("M3_ci ", m3_cipher);
             display4by4("M4_ci ", m4_cipher);
 
-            endTime = System.currentTimeMillis();
-            encryptTime = (endTime - startTime);
 
             System.out.println("Making composite cipher for M1,M2,M3,M4");
             String cipheredText = compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher);
@@ -735,8 +751,9 @@ public class Encryptor {
             System.out.println("Cipher in string:" + cipheredText);
             System.out.println("Key in string:" + compositearraytoString(k1, k2, k4, k3));
 
-            System.out.println("Encryption Time in ms:" + encryptTime);
 
+            double bytes = file.length();
+            System.out.println("Size(kilobytes):" + bytes / 1024);
             return cipheredText;
         }
 
@@ -886,7 +903,7 @@ public class Encryptor {
         return array;
     }
 
-      static String toBinary(String plaintextbin, int bits) {
+    static String toBinary(String plaintextbin, int bits) {
         String result = "";
         String tmpStr;
         int tmpInt;
@@ -929,7 +946,7 @@ public class Encryptor {
 
     }
 
-     static String[] convertToBinaryStringArray(String text  ) {
+    static String[] convertToBinaryStringArray(String text) {
         char[] charArray = {0, 0, 0, 0, 0, 0, 0, 0};
         int i = 0;
         while (i < 8) {
@@ -941,7 +958,6 @@ public class Encryptor {
 
         String paddedinput = new String(charArray);
         return toBinary(paddedinput, 8).split(" ");
-
 
 
     }
@@ -1056,10 +1072,9 @@ public class Encryptor {
         System.arraycopy(arrayin, 15, array2copy, 15, 1);
     }
 
-
     private static void display4by4(String name, byte[][] value) {
 
-        System.out.println("\t" + "Matrix :  " + name + "=");
+      /*  System.out.println("\t" + "Matrix :  " + name + "=");
         System.out.println();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -1073,6 +1088,21 @@ public class Encryptor {
         }
 
         System.out.println();
+*/
+    }
+
+    public static void processFile(File file) throws IOException {
+        try (InputStream in = new FileInputStream(file);
+             Reader reader = new InputStreamReader(in)) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                char a = ((char) c);
+                String s = String.valueOf(a);
+                plainText += s;
+
+            }
+        }
+
 
     }
 
