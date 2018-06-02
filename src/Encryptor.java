@@ -1,4 +1,4 @@
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -128,9 +128,17 @@ public class Encryptor {
     public static long startTime;
     public static long endTime;
     public static long encryptTime;
+    public static String plainText = "";
+    static File file = new File("hgeatext");
+
+    public static String key;
+    public static  String bulkText;
 
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) throws IOException {
+        processFile(file);
+        System.out.println("Enterred text:"+plainText);
+
 
         //generate key
 
@@ -189,8 +197,9 @@ public class Encryptor {
         }
 
 
-        String plainText = getInputText();
-        String bulkText = "";
+        bulkText = "";
+        startTime = System.currentTimeMillis();
+
 
         for (int i = 0; i < plainText.length(); i += 8) {
 
@@ -199,14 +208,25 @@ public class Encryptor {
             bulkText += encrypt(singleplainTextBin);
         }
 
-        System.out.println("BULK TExt :" +bulkText);
+        endTime = System.currentTimeMillis();
+        encryptTime = (endTime - startTime);
+
+
+        System.out.println("Encryption time(ms):" + encryptTime);
+        System.out.println("Cipher:" + bulkText);
+        key=compositearraytoString(k1, k2, k4, k3);
+        System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
+
+        double bytes = file.length();
+        System.out.println("File Size(kilobytes):" + bytes / 1024);
+
+        Decryptor.main(new String[]{"go"});
 
 
     }
 
     private static String encrypt(String[] plaintextbin) {
 
-        startTime = System.currentTimeMillis();
         //convert plaintext to 4*4
         String[] result1 = Arrays.copyOfRange(plaintextbin, 0, 4);
         String[] result2 = Arrays.copyOfRange(plaintextbin, 4, 8);
@@ -267,7 +287,6 @@ public class Encryptor {
                 }
 
             }
-
 
 
             //Calculating k prime
@@ -371,8 +390,6 @@ public class Encryptor {
             k4_prime = monoToBidi(k4_prime_array);
 
 
-
-
             //m1_xor_k1,k2,k3,k4
             Encryptor.xor(m1, k1, m1_xor_k1);
             Encryptor.xor(m1, k2, m1_xor_k2);
@@ -393,7 +410,6 @@ public class Encryptor {
             Encryptor.xor(m4, k2, m4_xor_k2);
             Encryptor.xor(m4, k3, m4_xor_k3);
             Encryptor.xor(m4, k4, m4_xor_k4);
-
 
 
             firstquadshiftcopy(bidiToMono(m1_xor_k1), m1_prime_candidate1_array);
@@ -445,8 +461,6 @@ public class Encryptor {
 
             }
             int remainder = count % 4;
-            System.out.println("No of 1's:" + count);
-            System.out.println("Remainder is:" + remainder);
 
             if (remainder == 0) {
                 m1_prime = m1_prime_candidate1;
@@ -498,7 +512,6 @@ public class Encryptor {
             }
 
 
-
             int count4 = 0;
             for (int i = 0; i < k4_array.length; i++) {
                 if (k4_array[i] == 1) {
@@ -517,9 +530,6 @@ public class Encryptor {
             } else if (remainder4 == 3) {
                 m4_prime = m4_prime_candidate4;
             }
-
-
-
 
 
             //M1 double prime calculated after xoring m1_prime and K1_prime
@@ -636,17 +646,15 @@ public class Encryptor {
             m4_cipher = Encryptor.monoToBidi(m4_cipher_array);
 
 
-            endTime = System.currentTimeMillis();
-            encryptTime = (endTime - startTime);
-
-            System.out.println("Making composite cipher for M1,M2,M3,M4");
             String cipheredText = compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher);
 
-            System.out.println("Cipher in string:" + cipheredText);
+       /*     System.out.println("Cipher in string:" + cipheredText);
             System.out.println("Key in string:" + compositearraytoString(k1, k2, k4, k3));
 
-            System.out.println("Encryption Time in ms:" + encryptTime);
-
+         //   System.out.println("Encryption Time in ms:" + encryptTime);
+            double bytes = file.length();
+            System.out.println("Size(kilobytes):" + bytes / 1024);
+*/
             return cipheredText;
         }
 
@@ -796,7 +804,7 @@ public class Encryptor {
         return array;
     }
 
-      static String toBinary(String plaintextbin, int bits) {
+    static String toBinary(String plaintextbin, int bits) {
         String result = "";
         String tmpStr;
         int tmpInt;
@@ -839,7 +847,7 @@ public class Encryptor {
 
     }
 
-     static String[] convertToBinaryStringArray(String text  ) {
+    static String[] convertToBinaryStringArray(String text) {
         char[] charArray = {0, 0, 0, 0, 0, 0, 0, 0};
         int i = 0;
         while (i < 8) {
@@ -851,7 +859,6 @@ public class Encryptor {
 
         String paddedinput = new String(charArray);
         return toBinary(paddedinput, 8).split(" ");
-
 
 
     }
@@ -986,6 +993,22 @@ public class Encryptor {
 
     }
 */
+
+    public static void processFile(File file) throws IOException {
+        try (InputStream in = new FileInputStream(file);
+             Reader reader = new InputStreamReader(in)) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                char a = ((char) c);
+                String s = String.valueOf(a);
+                plainText += s;
+
+            }
+        }
+
+
+    }
+
 
 }
 

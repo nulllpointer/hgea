@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb327dad-ec1b-483f-a97e-b8f6a5707931" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hgea/Decryptor.class" afterPath="$PROJECT_DIR$/out/production/hgea/Decryptor.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hgeatext" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hgea/Encryptor.class" afterPath="$PROJECT_DIR$/out/production/hgea/Encryptor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Decryptor.java" afterPath="$PROJECT_DIR$/src/Decryptor.java" />
@@ -17,21 +16,45 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/hgea$Encryptor.coverage" NAME="Encryptor Coverage Results" MODIFIED="1527934266110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Decryptor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Decryptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="881" column="35" lean-forward="false" selection-start-line="881" selection-start-column="35" selection-end-line="881" selection-end-column="35" />
+            <state relative-caret-position="359">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1527930756935" expanded="false" signature="37117:37517" ph="{...}" />
+                <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#toBinary#0;class#Decryptor#0" expanded="false" />
+                <element signature="method#getInputText#0;class#Decryptor#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hgeatext" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hgeatext">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="3177" lean-forward="false" selection-start-line="8" selection-start-column="3177" selection-end-line="8" selection-end-column="3177" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,11 +62,10 @@
       <file leaf-file-name="Encryptor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="962" column="47" lean-forward="true" selection-start-line="962" selection-start-column="47" selection-end-line="962" selection-end-column="47" />
+            <state relative-caret-position="224">
+              <caret line="219" column="37" lean-forward="true" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1527930756963" expanded="false" signature="39733:40133" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -52,9 +74,44 @@
       <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/lang/System.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="342">
               <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
-              <folding />
+              <folding>
+                <element signature="e#0#53706#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#11566#11567#0" expanded="false" />
+                <element signature="e#11597#11598#0" expanded="false" />
+                <element signature="e#26565#26566#0" expanded="false" />
+                <element signature="e#26601#26602#0" expanded="false" />
+                <element signature="e#40171#40172#0" expanded="false" />
+                <element signature="e#40220#40221#0" expanded="false" />
+                <element signature="e#40917#40918#0" expanded="false" />
+                <element signature="e#40958#40959#0" expanded="false" />
+                <element signature="e#41780#41781#0" expanded="false" />
+                <element signature="e#41834#41835#0" expanded="false" />
+                <element signature="e#43077#43078#0" expanded="false" />
+                <element signature="e#43127#43128#0" expanded="false" />
+                <element signature="e#44970#44971#0" expanded="false" />
+                <element signature="e#45051#45052#0" expanded="false" />
+                <element signature="e#51559#51560#0" expanded="false" />
+                <element signature="e#51621#51622#0" expanded="false" />
+                <element signature="e#51882#51883#0" expanded="false" />
+                <element signature="e#51946#51947#0" expanded="false" />
+                <element signature="e#52191#52192#0" expanded="false" />
+                <element signature="e#52255#52256#0" expanded="false" />
+                <element signature="e#52326#52327#0" expanded="false" />
+                <element signature="e#52394#52395#0" expanded="false" />
+                <element signature="e#52670#52671#0" expanded="false" />
+                <element signature="e#52739#52740#0" expanded="false" />
+                <element signature="e#52802#52803#0" expanded="false" />
+                <element signature="e#52848#52849#0" expanded="false" />
+                <element signature="e#53097#53098#0" expanded="false" />
+                <element signature="e#53158#53159#0" expanded="false" />
+                <element signature="e#53238#53239#0" expanded="false" />
+                <element signature="e#53302#53303#0" expanded="false" />
+                <element signature="e#53360#53361#0" expanded="false" />
+                <element signature="e#53422#53423#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,9 +149,10 @@
       <find>conver</find>
       <find>display4by4</find>
       <find>sout</find>
-      <find>System.out</find>
       <find>display</find>
       <find>System</find>
+      <find>time</find>
+      <find>System.out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,6 +170,7 @@
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/Encryptor.java" />
         <option value="$PROJECT_DIR$/src/Decryptor.java" />
+        <option value="$PROJECT_DIR$/hgeatext" />
       </list>
     </option>
   </component>
@@ -144,7 +203,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -174,6 +232,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -724,11 +783,12 @@
       <updated>1527534513496</updated>
       <workItem from="1527534517718" duration="12179000" />
       <workItem from="1527930290716" duration="858000" />
+      <workItem from="1527931670635" duration="5765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13037000" />
+    <option name="totallyTimeSpent" value="18802000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,7 +801,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="52" width="1858" height="1028" extended-state="4" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -756,16 +816,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3967742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28709677" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25275937" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25551876" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -773,6 +833,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,8 +850,38 @@
           <line>10</line>
           <properties />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
+          <line>216</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Encryptor.java</url>
+          <line>219</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
+          <line>93</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Decryptor.java</url>
+          <line>214</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -801,11 +892,117 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#toBinary#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#getInputText#0;class#Decryptor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18278">
+          <caret line="962" column="0" lean-forward="true" selection-start-line="962" selection-start-column="0" selection-end-line="962" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#53706#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#11566#11567#0" expanded="false" />
+            <element signature="e#11597#11598#0" expanded="false" />
+            <element signature="e#26565#26566#0" expanded="false" />
+            <element signature="e#26601#26602#0" expanded="false" />
+            <element signature="e#40171#40172#0" expanded="false" />
+            <element signature="e#40220#40221#0" expanded="false" />
+            <element signature="e#40917#40918#0" expanded="false" />
+            <element signature="e#40958#40959#0" expanded="false" />
+            <element signature="e#41780#41781#0" expanded="false" />
+            <element signature="e#41834#41835#0" expanded="false" />
+            <element signature="e#43077#43078#0" expanded="false" />
+            <element signature="e#43127#43128#0" expanded="false" />
+            <element signature="e#44970#44971#0" expanded="false" />
+            <element signature="e#45051#45052#0" expanded="false" />
+            <element signature="e#51559#51560#0" expanded="false" />
+            <element signature="e#51621#51622#0" expanded="false" />
+            <element signature="e#51882#51883#0" expanded="false" />
+            <element signature="e#51946#51947#0" expanded="false" />
+            <element signature="e#52191#52192#0" expanded="false" />
+            <element signature="e#52255#52256#0" expanded="false" />
+            <element signature="e#52326#52327#0" expanded="false" />
+            <element signature="e#52394#52395#0" expanded="false" />
+            <element signature="e#52670#52671#0" expanded="false" />
+            <element signature="e#52739#52740#0" expanded="false" />
+            <element signature="e#52802#52803#0" expanded="false" />
+            <element signature="e#52848#52849#0" expanded="false" />
+            <element signature="e#53097#53098#0" expanded="false" />
+            <element signature="e#53158#53159#0" expanded="false" />
+            <element signature="e#53238#53239#0" expanded="false" />
+            <element signature="e#53302#53303#0" expanded="false" />
+            <element signature="e#53360#53361#0" expanded="false" />
+            <element signature="e#53422#53423#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RandomString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1527930756935" expanded="false" signature="37117:37517" ph="{...}" />
+            <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#toBinary#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#getInputText#0;class#Decryptor#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -816,7 +1013,6 @@
           <caret line="935" column="36" lean-forward="true" selection-start-line="935" selection-start-column="36" selection-end-line="935" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1527930756963" expanded="false" signature="39733:40133" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -864,31 +1060,92 @@
     </entry>
     <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="342">
           <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#0#53706#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#11566#11567#0" expanded="false" />
+            <element signature="e#11597#11598#0" expanded="false" />
+            <element signature="e#26565#26566#0" expanded="false" />
+            <element signature="e#26601#26602#0" expanded="false" />
+            <element signature="e#40171#40172#0" expanded="false" />
+            <element signature="e#40220#40221#0" expanded="false" />
+            <element signature="e#40917#40918#0" expanded="false" />
+            <element signature="e#40958#40959#0" expanded="false" />
+            <element signature="e#41780#41781#0" expanded="false" />
+            <element signature="e#41834#41835#0" expanded="false" />
+            <element signature="e#43077#43078#0" expanded="false" />
+            <element signature="e#43127#43128#0" expanded="false" />
+            <element signature="e#44970#44971#0" expanded="false" />
+            <element signature="e#45051#45052#0" expanded="false" />
+            <element signature="e#51559#51560#0" expanded="false" />
+            <element signature="e#51621#51622#0" expanded="false" />
+            <element signature="e#51882#51883#0" expanded="false" />
+            <element signature="e#51946#51947#0" expanded="false" />
+            <element signature="e#52191#52192#0" expanded="false" />
+            <element signature="e#52255#52256#0" expanded="false" />
+            <element signature="e#52326#52327#0" expanded="false" />
+            <element signature="e#52394#52395#0" expanded="false" />
+            <element signature="e#52670#52671#0" expanded="false" />
+            <element signature="e#52739#52740#0" expanded="false" />
+            <element signature="e#52802#52803#0" expanded="false" />
+            <element signature="e#52848#52849#0" expanded="false" />
+            <element signature="e#53097#53098#0" expanded="false" />
+            <element signature="e#53158#53159#0" expanded="false" />
+            <element signature="e#53238#53239#0" expanded="false" />
+            <element signature="e#53302#53303#0" expanded="false" />
+            <element signature="e#53360#53361#0" expanded="false" />
+            <element signature="e#53422#53423#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Encryptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="962" column="47" lean-forward="true" selection-start-line="962" selection-start-column="47" selection-end-line="962" selection-end-column="47" />
+        <state relative-caret-position="224">
+          <caret line="219" column="37" lean-forward="true" selection-start-line="219" selection-start-column="37" selection-end-line="219" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1527930756963" expanded="false" signature="39733:40133" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Documents/Libraries(jar)/jdk1.8.0_161/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Decryptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="881" column="35" lean-forward="false" selection-start-line="881" selection-start-column="35" selection-end-line="881" selection-end-column="35" />
+        <state relative-caret-position="359">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1527930756935" expanded="false" signature="37117:37517" ph="{...}" />
+            <element signature="method#convertToBinaryStringArray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#firstquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#secondquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#thirdquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#fourthquadshiftcopy#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearraytoString#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#compositearray#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#bidiToMono#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#monoToBidi#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#xor#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#toBinary#0;class#Decryptor#0" expanded="false" />
+            <element signature="method#getInputText#0;class#Decryptor#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hgeatext">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="3177" lean-forward="false" selection-start-line="8" selection-start-column="3177" selection-end-line="8" selection-end-column="3177" />
+          <folding />
         </state>
       </provider>
     </entry>

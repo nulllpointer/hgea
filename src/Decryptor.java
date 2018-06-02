@@ -80,12 +80,18 @@ public class Decryptor {
     public static String[] key = new String[8];
 
     public static void main(String[] args) {
+/*
         key = takeTheInput("Hello sir please enter the key");
-        System.out.println("Enter the cipher :");
-        ;
         String ciphertext = getInputText();
-        String bulkPlainText = "";
+*/
 
+        System.out.println("Now Decrypting....");
+        key = takeTheInput("Please enter the secret key");
+
+        String ciphertext = Encryptor.bulkText;
+
+        String bulkPlainText = "";
+        long stDecTm = System.currentTimeMillis();
         for (int i = 0; i < ciphertext.length(); i += 8) {
 
             String singlecipher = ciphertext.substring(i, Math.min(i + 8, ciphertext.length()));
@@ -93,7 +99,10 @@ public class Decryptor {
             bulkPlainText += decrypt(key, singleCipherBin);
         }
 
-        System.out.println("BULK TExt :" + bulkPlainText);
+        System.out.println("PlainText:" + bulkPlainText);
+        long endDecTime = System.currentTimeMillis();
+        decryptTime = (endDecTime - stDecTm);
+        System.out.println("Decryption time(ms): " + decryptTime);
 
 
         // decrypt(key,singleCipher);
@@ -112,7 +121,6 @@ public class Decryptor {
         String paddedinput = new String(charArray);
         return toBinary(paddedinput, 8).split(" ");
     }
-
 
     private static String decrypt(String[] key, String[] ciphertext_array) {
         long stDecTm = System.currentTimeMillis();
@@ -225,9 +233,6 @@ public class Decryptor {
         }
 
 
-
-
-
         m1_cipher_array = bidiToMono(m1_cipher);
         m2_cipher_array = bidiToMono(m2_cipher);
         m3_cipher_array = bidiToMono(m3_cipher);
@@ -333,8 +338,6 @@ public class Decryptor {
         k4_prime = monoToBidi(k4_prime_array);
 
 
-
-
         //Plotting standard XY axis graph values
         System.arraycopy(m1_cipher_array, 15, m1_array, 0, 1);
         System.arraycopy(m1_cipher_array, 14, m1_array, 1, 1);
@@ -430,9 +433,6 @@ public class Decryptor {
         m4 = monoToBidi(m4_array);
 
 
-
-
-
         //Counting 1's in K1
         int count = 0;
         for (int i = 0; i < k1_array.length; i++) {
@@ -502,7 +502,6 @@ public class Decryptor {
             fourthquadshiftcopy(bidiToMono(m2_prime_new), hero2);
             xor(monoToBidi(hero2), k4, m2_double_prime);
         }
-
 
 
         int count3 = 0;
@@ -577,8 +576,6 @@ public class Decryptor {
         }
 
 
-
-
         tmp1 = m3_double_prime;
         tmp2 = m4_double_prime;
         m3_double_prime = tmp1;
@@ -590,56 +587,20 @@ public class Decryptor {
         byte[][] m_cipher = compositearray(m1_cipher, m2_cipher, m3_cipher, m4_cipher);
 
         //Conclusion
-
-        System.out.println("M_ci " + "\t" + m_cipher[0][0] + "\t" + m_cipher[0][1] + "\t" + m_cipher[0][2] + "\t" + m_cipher[0][3] + "\t" + "\t" + m_cipher[4][0] + "\t" + m_cipher[4][1] + "\t" + m_cipher[4][2] + "\t" + m_cipher[4][3] + "\n" +
-                "\t" + "\t" + m_cipher[1][0] + "\t" + m_cipher[1][1] + "\t" + m_cipher[1][2] + "\t" + m_cipher[1][3] + "\t" + "\t" + m_cipher[5][0] + "\t" + m_cipher[5][1] + "\t" + m_cipher[5][2] + "\t" + m_cipher[5][3] + "\n" +
-                "\t" + "\t" + m_cipher[2][0] + "\t" + m_cipher[2][1] + "\t" + m_cipher[2][2] + "\t" + m_cipher[2][3] + "\t" + "\t" + m_cipher[6][0] + "\t" + m_cipher[6][1] + "\t" + m_cipher[6][2] + "\t" + m_cipher[6][3] + "\n" +
-                "\t" + "\t" + m_cipher[3][0] + "\t" + m_cipher[3][1] + "\t" + m_cipher[3][2] + "\t" + m_cipher[3][3] + "\t" + "\t" + m_cipher[7][0] + "\t" + m_cipher[7][1] + "\t" + m_cipher[7][2] + "\t" + m_cipher[7][3] + "\n" + "\n" +
-
-                "\t" + "\t" + m_cipher[12][0] + "\t" + m_cipher[12][1] + "\t" + m_cipher[12][2] + "\t" + m_cipher[12][3] + "\t" + "\t" + m_cipher[8][0] + "\t" + m_cipher[8][1] + "\t" + m_cipher[8][2] + "\t" + m_cipher[8][3] + "\n" +
-                "\t" + "\t" + m_cipher[13][0] + "\t" + m_cipher[13][1] + "\t" + m_cipher[13][2] + "\t" + m_cipher[13][3] + "\t" + "\t" + m_cipher[9][0] + "\t" + m_cipher[9][1] + "\t" + m_cipher[9][2] + "\t" + m_cipher[9][3] + "\n" +
-                "\t" + "\t" + m_cipher[14][0] + "\t" + m_cipher[14][1] + "\t" + m_cipher[14][2] + "\t" + m_cipher[14][3] + "\t" + "\t" + m_cipher[10][0] + "\t" + m_cipher[10][1] + "\t" + m_cipher[10][2] + "\t" + m_cipher[10][3] + "\n" +
-                "\t" + "\t" + m_cipher[15][0] + "\t" + m_cipher[15][1] + "\t" + m_cipher[15][2] + "\t" + m_cipher[15][3] + "\t" + "\t" + m_cipher[11][0] + "\t" + m_cipher[11][1] + "\t" + m_cipher[11][2] + "\t" + m_cipher[11][3] + "\n"
-
-        );
-
-        System.out.println("Key " + "\t" + key_array[0][0] + "\t" + key_array[0][1] + "\t" + key_array[0][2] + "\t" + key_array[0][3] + "\t" + "\t" + key_array[4][0] + "\t" + key_array[4][1] + "\t" + key_array[4][2] + "\t" + key_array[4][3] + "\n" +
-                "\t" + "\t" + key_array[1][0] + "\t" + key_array[1][1] + "\t" + key_array[1][2] + "\t" + key_array[1][3] + "\t" + "\t" + key_array[5][0] + "\t" + key_array[5][1] + "\t" + key_array[5][2] + "\t" + key_array[5][3] + "\n" +
-                "\t" + "\t" + key_array[2][0] + "\t" + key_array[2][1] + "\t" + key_array[2][2] + "\t" + key_array[2][3] + "\t" + "\t" + key_array[6][0] + "\t" + key_array[6][1] + "\t" + key_array[6][2] + "\t" + key_array[6][3] + "\n" +
-                "\t" + "\t" + key_array[3][0] + "\t" + key_array[3][1] + "\t" + key_array[3][2] + "\t" + key_array[3][3] + "\t" + "\t" + key_array[7][0] + "\t" + key_array[7][1] + "\t" + key_array[7][2] + "\t" + key_array[7][3] + "\n" + "\n" +
-
-                "\t" + "\t" + key_array[12][0] + "\t" + key_array[12][1] + "\t" + key_array[12][2] + "\t" + key_array[12][3] + "\t" + "\t" + key_array[8][0] + "\t" + key_array[8][1] + "\t" + key_array[8][2] + "\t" + key_array[8][3] + "\n" +
-                "\t" + "\t" + key_array[13][0] + "\t" + key_array[13][1] + "\t" + key_array[13][2] + "\t" + key_array[13][3] + "\t" + "\t" + key_array[9][0] + "\t" + key_array[9][1] + "\t" + key_array[9][2] + "\t" + key_array[9][3] + "\n" +
-                "\t" + "\t" + key_array[14][0] + "\t" + key_array[14][1] + "\t" + key_array[14][2] + "\t" + key_array[14][3] + "\t" + "\t" + key_array[10][0] + "\t" + key_array[10][1] + "\t" + key_array[10][2] + "\t" + key_array[10][3] + "\n" +
-                "\t" + "\t" + key_array[15][0] + "\t" + key_array[15][1] + "\t" + key_array[15][2] + "\t" + key_array[15][3] + "\t" + "\t" + key_array[11][0] + "\t" + key_array[11][1] + "\t" + key_array[11][2] + "\t" + key_array[11][3] + "\n"
-
-        );
-
-
-        System.out.println("P = " + "\t" + m_plaintext[0][0] + "\t" + m_plaintext[0][1] + "\t" + m_plaintext[0][2] + "\t" + m_plaintext[0][3] + "\t" + "\t" + m_plaintext[4][0] + "\t" + m_plaintext[4][1] + "\t" + m_plaintext[4][2] + "\t" + m_plaintext[4][3] + "\n" +
-                "\t" + "\t" + m_plaintext[1][0] + "\t" + m_plaintext[1][1] + "\t" + m_plaintext[1][2] + "\t" + m_plaintext[1][3] + "\t" + "\t" + m_plaintext[5][0] + "\t" + m_plaintext[5][1] + "\t" + m_plaintext[5][2] + "\t" + m_plaintext[5][3] + "\n" +
-                "\t" + "\t" + m_plaintext[2][0] + "\t" + m_plaintext[2][1] + "\t" + m_plaintext[2][2] + "\t" + m_plaintext[2][3] + "\t" + "\t" + m_plaintext[6][0] + "\t" + m_plaintext[6][1] + "\t" + m_plaintext[6][2] + "\t" + m_plaintext[6][3] + "\n" +
-                "\t" + "\t" + m_plaintext[3][0] + "\t" + m_plaintext[3][1] + "\t" + m_plaintext[3][2] + "\t" + m_plaintext[3][3] + "\t" + "\t" + m_plaintext[7][0] + "\t" + m_plaintext[7][1] + "\t" + m_plaintext[7][2] + "\t" + m_plaintext[7][3] + "\n" + "\n" +
-
-                "\t" + "\t" + m_plaintext[8][0] + "\t" + m_plaintext[8][1] + "\t" + m_plaintext[8][2] + "\t" + m_plaintext[8][3] + "\t" + "\t" + m_plaintext[12][0] + "\t" + m_plaintext[12][1] + "\t" + m_plaintext[12][2] + "\t" + m_plaintext[12][3] + "\n" +
-                "\t" + "\t" + m_plaintext[9][0] + "\t" + m_plaintext[9][1] + "\t" + m_plaintext[9][2] + "\t" + m_plaintext[9][3] + "\t" + "\t" + m_plaintext[13][0] + "\t" + m_plaintext[13][1] + "\t" + m_plaintext[13][2] + "\t" + m_plaintext[13][3] + "\n" +
-                "\t" + "\t" + m_plaintext[10][0] + "\t" + m_plaintext[10][1] + "\t" + m_plaintext[10][2] + "\t" + m_plaintext[10][3] + "\t" + "\t" + m_plaintext[14][0] + "\t" + m_plaintext[14][1] + "\t" + m_plaintext[14][2] + "\t" + m_plaintext[14][3] + "\n" +
-                "\t" + "\t" + m_plaintext[11][0] + "\t" + m_plaintext[11][1] + "\t" + m_plaintext[11][2] + "\t" + m_plaintext[11][3] + "\t" + "\t" + m_plaintext[15][0] + "\t" + m_plaintext[15][1] + "\t" + m_plaintext[15][2] + "\t" + m_plaintext[15][3] + "\n"
-
-        );
-
         long endDecTime = System.currentTimeMillis();
 
 
         decryptTime = (endDecTime - stDecTm);
 
-        System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
+     /*   System.out.println("Key:" + compositearraytoString(k1, k2, k4, k3));
         System.out.println("Cipher:" + compositearraytoString(m1_cipher, m2_cipher, m4_cipher, m3_cipher));
-
+*/
         String plainText = compositearraytoString(m1_double_prime, m2_double_prime, m3_double_prime, m4_double_prime);
-        System.out.println("Plaintext:" + plainText);
+  /*      System.out.println("Plaintext:" + plainText);
         System.out.println("decryption time in ms : " + decryptTime);
-        return plainText;
+  */      return plainText;
+
+
 
 
     }
@@ -835,6 +796,7 @@ public class Decryptor {
     private static String[] takeTheInput(String a) {
 
         String inp = a;
+        System.out.println(inp);
         Scanner scanner = new Scanner(in);
 
         text = scanner.next();
@@ -856,25 +818,6 @@ public class Decryptor {
 
     }
 
-   /* private static void display4by4(String name, byte[][] value) {
-
-        System.out.println("\t" + "Matrix :  " + name + "=");
-        System.out.println();
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                //System.out.print("\t"+ value[i][j] + "\t");
-                System.out.print("\t" + value[i][j] + "\t");
-
-
-            }
-            System.out.println("\n");
-
-        }
-
-        System.out.println();
-
-    }
-*/
     private static byte[] bidiToMono(final byte[][] array) {
         int rows = array.length, cols = array[0].length;
         byte[] mono = new byte[(rows * cols)];
@@ -940,7 +883,7 @@ public class Decryptor {
     }
 
     private static String getInputText() {
-        System.out.println("Please enter the text :");
+        System.out.println("Please enter the cipher text :");
         Scanner scanner = new Scanner(in);
 
         text = scanner.next();
