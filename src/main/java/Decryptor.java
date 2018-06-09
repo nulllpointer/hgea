@@ -1,8 +1,9 @@
+package main.java;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 import static java.lang.System.in;
-import static java.lang.System.setOut;
 
 public class Decryptor {
     public static String text = "";
@@ -93,13 +94,13 @@ public class Decryptor {
         String bulkPlainText = "";
         long stDecTm = System.currentTimeMillis();
         for (int i = 0; i < ciphertext.length(); i += 8) {
-
             String singlecipher = ciphertext.substring(i, Math.min(i + 8, ciphertext.length()));
             String[] singleCipherBin = convertToBinaryStringArray(singlecipher);
             bulkPlainText += decrypt(key, singleCipherBin);
         }
 
-      //  System.out.println("PlainText:" + bulkPlainText);
+        System.out.println("PlainText:" + bulkPlainText);
+
         long endDecTime = System.currentTimeMillis();
         decryptTime = (endDecTime - stDecTm);
         System.out.println("Decryption time(ms): " + decryptTime);

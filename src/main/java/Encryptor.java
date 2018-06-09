@@ -1,3 +1,5 @@
+package main.java;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Random;
@@ -132,7 +134,6 @@ public class Encryptor {
     static File inputfile = new File("inputfile");
     static File outputfile = new File("outputfile");
 
-
     public static String key;
     public static String bulkText;
 
@@ -227,6 +228,9 @@ public class Encryptor {
         System.out.println("File Size(kilobytes):" + bytes / 1024);
 
         Decryptor.main(new String[]{"go"});
+
+        System.out.println("Now DES");
+
 
 
     }
@@ -458,95 +462,18 @@ public class Encryptor {
             m4_prime_candidate3 = monoToBidi(m4_prime_candidate3_array);
             m4_prime_candidate4 = monoToBidi(m4_prime_candidate4_array);
 
-            //Counting 1's in K1
-            int count = 0;
-            for (int i = 0; i < k1_array.length; i++) {
-                if (k1_array[i] == 1) {
-                    count++;
-                }
-
-            }
-            int remainder = count % 4;
-
-            if (remainder == 0) {
-                m1_prime = m1_prime_candidate1;
-            } else if (remainder == 1) {
-                m1_prime = m1_prime_candidate2;
-            } else if (remainder == 2) {
-                m1_prime = m1_prime_candidate3;
-            } else if (remainder == 3) {
-                m1_prime = m1_prime_candidate4;
-            }
-
-            int count2 = 0;
-            for (int i = 0; i < k2_array.length; i++) {
-                if (k2_array[i] == 1) {
-                    count2++;
-                }
-
-            }
-            int remainder2 = count2 % 4;
-
-            if (remainder2 == 0) {
-                m2_prime = m2_prime_candidate1;
-            } else if (remainder2 == 1) {
-                m2_prime = m2_prime_candidate2;
-            } else if (remainder2 == 2) {
-                m2_prime = m2_prime_candidate3;
-            } else if (remainder2 == 3) {
-                m2_prime = m2_prime_candidate4;
-            }
-
-
-            int count3 = 0;
-            for (int i = 0; i < k3_array.length; i++) {
-                if (k3_array[i] == 1) {
-                    count3++;
-                }
-
-            }
-            int remainder3 = count3 % 4;
-
-            if (remainder3 == 0) {
-                m3_prime = m3_prime_candidate1;
-            } else if (remainder3 == 1) {
-                m3_prime = m3_prime_candidate2;
-            } else if (remainder3 == 2) {
-                m3_prime = m3_prime_candidate3;
-            } else if (remainder3 == 3) {
-                m3_prime = m3_prime_candidate4;
-            }
-
-
-            int count4 = 0;
-            for (int i = 0; i < k4_array.length; i++) {
-                if (k4_array[i] == 1) {
-                    count4++;
-                }
-
-            }
-            int remainder4 = count4 % 4;
-
-            if (remainder4 == 0) {
-                m4_prime = m4_prime_candidate1;
-            } else if (remainder4 == 1) {
-                m4_prime = m4_prime_candidate2;
-            } else if (remainder4 == 2) {
-                m4_prime = m4_prime_candidate3;
-            } else if (remainder4 == 3) {
-                m4_prime = m4_prime_candidate4;
-            }
+            //Counting 1's in Ki and selecting quadrant
+            m1_prime = quadselected(k1_array, m1_prime_candidate1, m1_prime_candidate2, m1_prime_candidate3, m1_prime_candidate4);
+            m2_prime = quadselected(k2_array, m2_prime_candidate1, m2_prime_candidate2, m2_prime_candidate3, m2_prime_candidate4);
+            m3_prime = quadselected(k3_array, m3_prime_candidate1, m3_prime_candidate2, m3_prime_candidate3, m3_prime_candidate4);
+            m4_prime = quadselected(k4_array, m4_prime_candidate1, m4_prime_candidate2, m4_prime_candidate3, m4_prime_candidate4);
 
 
             //M1 double prime calculated after xoring m1_prime and K1_prime
 
             xor(m1_prime, k1_prime, m1_double_prime);
-
             xor(m2_prime, k2_prime, m2_double_prime);
-
             xor(m3_prime, k3_prime, m3_double_prime);
-
-
             xor(m4_prime, k4_prime, m4_double_prime);
 
             m1_double_prime_array = Encryptor.bidiToMono(m1_double_prime);
@@ -1024,6 +951,33 @@ public class Encryptor {
         }
 
     }
+
+    public static byte[][] quadselected(byte[] karray, byte[][] cand1, byte[][] cand2, byte[][] cand3, byte[][] cand4) {
+        byte[][] m_prime = new byte[4][4];
+        int count = 0;
+        for (int i = 0; i < karray.length; i++) {
+            if (karray[i] == 1) {
+                count++;
+            }
+
+        }
+        int remainder = count % 4;
+        if (remainder == 0) {
+            m_prime = cand1;
+        } else if (remainder == 1) {
+            m_prime = cand2;
+        } else if (remainder == 2) {
+            m_prime = cand3;
+        } else if (remainder == 3) {
+            m_prime = cand4;
+        }
+
+        return m_prime;
+
+
+    }
+
+
 }
 
 
